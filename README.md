@@ -43,15 +43,11 @@ The project currently uses the following model:
 
 Model performance metrics are as follows:
 
-Train R2: X.XX
-
-Test R2: X.XX
-
-Test MSE: X.XX
-
-Test RMSE: X.XX
-
-Test MAE: X.XX
+- Train R2: 0.9969405038749669
+- Test R2: 0.9957105411882591
+- Test MSE: 715034.8020481495
+- Test RMSE: 845.5973048964557
+- Test MAE: 679.807833715253
 
 ## Deployment
 The Streamlit app is deployed and accessible via this link. This allows users to interact with the model directly in a web browser without needing to run the code locally.
