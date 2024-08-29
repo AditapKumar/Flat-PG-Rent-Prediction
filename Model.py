@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import joblib
 
@@ -47,21 +48,6 @@ print(f"Test R2: {test_r2}")
 print(f"Test MSE: {test_mse}")
 print(f"Test RMSE: {test_rmse}")
 print(f"Test MAE: {test_mae}")
-
-# Function to predict rent based on user input
-def predict_rent(input_data):
-    input_features = pd.DataFrame(input_data, index=[0])
-    input_features = pd.get_dummies(input_features, drop_first=True)
-
-    # Align input features with the training data
-    missing_cols = set(X.columns) - set(input_features.columns)
-    for col in missing_cols:
-        input_features[col] = 0
-    input_features = input_features[X.columns]
-
-    # Predict rent price
-    predicted_rent = model.predict(input_features)
-    return predicted_rent[0]
 
 
 # Save the trained model for later use
